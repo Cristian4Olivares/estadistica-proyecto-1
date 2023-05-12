@@ -1,3 +1,8 @@
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -19,15 +24,15 @@
                 </div>
 
                 <x-section-border />
-            @endif
+            @endif 
 
-            @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
+           {{--  @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.two-factor-authentication-form')
                 </div>
 
                 <x-section-border />
-            @endif
+            @endif --}}
 
             <div class="mt-10 sm:mt-0">
                 @livewire('profile.logout-other-browser-sessions-form')
@@ -43,3 +48,4 @@
         </div>
     </div>
 </x-app-layout>
+@stop
