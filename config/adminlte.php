@@ -1,3 +1,4 @@
+
 <?php
 
 return [
@@ -63,8 +64,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Sistema</b> Estadistico',
+    'logo_img' => 'vendor/adminlte/dist/img/LOGO-HM.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +87,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/LOGO-HM.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -109,7 +110,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/LOGO-HM.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -253,7 +254,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'dash',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -289,122 +290,263 @@ return [
     |
     */
 
-    'menu' => [
-        // Navbar items:
+    'menu' => 
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
-        ],
-        [
-            'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
+            // Navbar items:
+            [
+                'type'         => 'navbar-search',
+                'text'         => 'search',
+                'topnav_right' => false,
+            ],
+            [
+                'type'         => 'fullscreen-widget',
+                'topnav_right' => false,
+            ],
 
-        // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
+            // Sidebar items:
+            /* Menu del dash -- El siguiente menu se vera refleejado en la parte izquierda y donde se daran 
+            los distintos accesos a las pantallas de configuracion  */
+            [
+                'type' => 'sidebar-menu-search',
+                'text' => 'Busqueda',
+            ],
+            [
+                'text' => 'blog',
+                'url'  => 'admin/blog',
+                'can'  => 'manage-blog',
+            ],
+                // MENU DESLISABLE
+            ['header' => 'MENU DEL SISTEMA ESTADISTICO'],
+            [
+                'text'    => 'FORMULARIOS',
+                //'icon_color' => 'red',
+                'icon'    => 'fas fa-fw fa fa-list-alt',
+                'submenu' => [
+                    [
+                        'text' => 'Consulta Externa (C.E)',
+                        'url'  => '#',
+                        //'icon_color' => 'danger',
+                        'icon'        => 'far fa-fw fa-hospital',
+                        'label'       => 1,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'COVID',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa fa-virus',
+                        'label'       => 2,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Ecocardio',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa fa-heartbeat',
+                        'label'       => 3,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Emergencia General',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa fa-medkit',
+                        'label'       => 4,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Endoscopia',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa fa-stethoscope',
+                        'label'       => 5,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Facturación',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa fa-credit-card',
+                        'label'       => 6,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Farmacia C.E.',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa-file',
+                        'label'       => 7,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Laboratorio',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa fa-flask',
+                        'label'       => 8,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Odontología ',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa fa-tooth',
+                        'label'       => 9,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Radiología ',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa fa-x-ray',
+                        'label'       => 10,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Rehabilitación ',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa fa-wheelchair',
+                        'label'       => 11,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Vacunas',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa fa-syringe',
+                        'label'       => 12,
+                        'label_color' => 'success',
+                    ],
+                   /*  [
+                        'text' => 'Facturacion',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa-file',
+                        'label'       => 4,
+                        'label_color' => 'success',
+                    ], */
+                    
                 ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
+            ],
+            
+            /*  
+            ****  EJEMPLO DE MENUS CON ICONOS Y LABEL
+            ['header' => 'Departamentos'],
+            [
+                'text'        => 'ODONTOLOGIA',
+                'url'         => '#',
+                'icon'        => 'far fa-fw fa-file',
+                'label'       => 4,
+                'label_color' => 'success',
+            ],
+            [
+                'text'        => 'PEDIATRIA',
+                'url'         => 'views/vista1',
+                'icon'        => 'bi bi-arrows-fullscreen',
+                'label'       => 'PEDRIATRIA',
+                'label_color' => 'primary',
+            ], */
+            ['header' => 'Configuracion de Usuario'],
+            [
+                'text' => 'Perfil de Usuario',
+                'url'  => 'user/profile',
+                'icon' => 'fas fa-fw fa-user-circle
+                ',
+            ],
+            
+            //EJEMPLO DE APARTADO DEL MODULO CON SUB MENUS 
+            /* [
+                'text'    => 'multilevel',
+                'icon'    => 'fas fa-fw fa-share',
+                'submenu' => [
+                    [
+                        'text' => 'level_one',
+                        'url'  => '#',
+                        'label'       => 4,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text'    => 'level_one',
+                        'url'     => '#',
+                        'submenu' => [
+                            [
+                                'text' => 'level_two',
+                                'url'  => '#',
+                            ],
+                            [
+                                'text'    => 'level_two',
+                                'url'     => '#',
+                                'submenu' => [
+                                    [
+                                        'text' => 'level_three',
+                                        'url'  => '#',
+                                    ],
+                                    [
+                                        'text' => 'level_three',
+                                        'url'  => '#',
+                                    ],
                                 ],
                             ],
                         ],
                     ],
+                    [
+                        'text' => 'level_one',
+                        'url'  => '#',
+                    ],
                 ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
+            ], */
+            ['header' => 'REGISTRO INTERNO',
+                'header_color' => 'purple',
+            ],
+            [
+                'text'    => 'REGISTRO MEDICO',
+                'icon'    => 'fas fa-fw fa fa-users',
+                'submenu' => [
+                    [
+                        'text' => 'Registrar Doctor',
+                        //'icon_color' => 'purple',
+                        'icon'    => 'fas fa-fw fa fa-user-md',
+                        'url'  => '#dash',
+                        //'label'       => 4,
+                        //'label_color' => 'success',
+                    ],
+                    
+                    [
+                        'text' => 'Registrar Especialidad',
+                        //'icon_color' => 'blue',
+                        'icon'    => 'fas fa-fw fa fa-clipboard',
+                        'url'  => '#',
+                    ],
                 ],
             ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
-    ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Menu Filters
-    |--------------------------------------------------------------------------
-    |
-    | Here we can modify the menu filters of the admin panel.
-    |
-    | For detailed instructions you can look the menu filters section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Menu-Configuration
-    |
-    */
+            //EJEMPLO DE APARTADO DE MENU PARA REFERENCIDO A CADA MODULO
+            /* [
+                'text'       => 'important',
+                'icon_color' => 'red',
+                'url'        => '#',
+            ],
+            [
+                'text'       => 'warning',
+                'icon_color' => 'yellow',
+                'url'        => '#',
+            ],
+            [
+                'text'       => 'information',
+                'icon_color' => 'cyan',
+                'url'        => '#',
+            ], */
+        ],
+        
+        /*
+        |--------------------------------------------------------------------------
+        | Menu Filters
+        |--------------------------------------------------------------------------
+        |
+        | Here we can modify the menu filters of the admin panel.
+        |
+        | For detailed instructions you can look the menu filters section here:
+        | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Menu-Configuration
+        |
+        */
 
-    'filters' => [
-        JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\DataFilter::class,
+        'filters' => [
+            JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
+            JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
+            JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter::class,
+            JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
+            JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
+            JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
+            JeroenNoten\LaravelAdminLte\Menu\Filters\DataFilter::class,
     ],
 
     /*
