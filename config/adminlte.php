@@ -308,7 +308,7 @@ return [
             los distintos accesos a las pantallas de configuracion  */
             [
                 'type' => 'sidebar-menu-search',
-                'text' => 'search',
+                'text' => 'Busqueda',
             ],
             [
                 'text' => 'blog',
@@ -323,10 +323,24 @@ return [
                 'icon'    => 'fas fa-fw fa-lock',
                 'submenu' => [
                     [
-                        'text' => 'Consulta Externa',
+                        'text' => 'Consulta Externa (C.E)',
                         'url'  => '#',
                         'icon_color' => 'danger',
                         //'icon'        => 'far fa-fw fa-file',
+                        'label'       => 1,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'COVID',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa-file',
+                        'label'       => 4,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Ecocardio',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa-file',
                         'label'       => 4,
                         'label_color' => 'success',
                     ],
@@ -338,21 +352,28 @@ return [
                         'label_color' => 'success',
                     ],
                     [
-                        'text' => 'COVID',
+                        'text' => 'Endoscopia',
                         'url'  => '#',
                         'icon'        => 'far fa-fw fa-file',
                         'label'       => 4,
                         'label_color' => 'success',
                     ],
                     [
-                        'text' => 'Laboratorio',
+                        'text' => '',
                         'url'  => '#',
                         'icon'        => 'far fa-fw fa-file',
                         'label'       => 4,
                         'label_color' => 'success',
                     ],
                     [
-                        'text' => 'Rehabilitacion',
+                        'text' => '',
+                        'url'  => '#',
+                        'icon'        => 'far fa-fw fa-file',
+                        'label'       => 4,
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => '',
                         'url'  => '#',
                         'icon'        => 'far fa-fw fa-file',
                         'label'       => 4,
