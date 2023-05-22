@@ -13,18 +13,36 @@ use Illuminate\Support\Facades\View;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+use App\Models\Endoscopia;
+
 //Vista principal
 Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::resource('endoscopia','App\Http\Controllers\EndoscopiaController');
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dash', function () {
+        return view('dash.index');
+    })->name('dash');
+});
+
+/* Route::get('/', function () {
+    return view('vista1');
+}); */
 
 //Route::get('/','App\Http\Controllers\InicioController@index');
 
 /*
 if (View::exists('Vista2')) {
     Route::get('/', function () {
-        return view('vista2');
+        return view('vista1');
     });
 } else {
     Route::get('/', function () {
@@ -80,12 +98,3 @@ route::get('/usuario/{usuario}',function($usuario){
 
 */
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dash', function () {
-        return view('dash.index');
-    })->name('dash');
-});

@@ -100,5 +100,5 @@
                 {{ __('adminlte::adminlte.register_a_new_membership') }}
             </a>
         </p>
-    @endif
+    @endif 
 @stop

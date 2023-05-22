@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'INICIO')
 
 @section('content_header')
 <x-app-layout>
@@ -41,9 +41,9 @@
             @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
                 <x-section-border />
 
-                <div class="mt-10 sm:mt-0">
+                {{-- <div class="mt-10 sm:mt-0">
                     @livewire('profile.delete-user-form')
-                </div>
+                </div> --}}
             @endif
         </div>
     </div>

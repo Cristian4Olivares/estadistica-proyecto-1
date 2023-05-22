@@ -1,6 +1,6 @@
 
 <?php
-
+    $permiso=0;
 return [
 
     /*
@@ -315,6 +315,7 @@ return [
                 'url'  => 'admin/blog',
                 'can'  => 'manage-blog',
             ],
+            
                 // MENU DESLISABLE
             ['header' => 'MENU DEL SISTEMA ESTADISTICO'],
             [
@@ -353,7 +354,7 @@ return [
                     ],
                     [
                         'text' => 'Endoscopia',
-                        'url'  => '#',
+                        'url'  => '/endoscopia',
                         'icon'        => 'far fa-fw fa fa-stethoscope',
                         'label'       => 5,
                         'label_color' => 'success',
@@ -402,11 +403,12 @@ return [
                     ],
                     [
                         'text' => 'Vacunas',
-                        'url'  => '#',
+                        'url'  => 'register',
                         'icon'        => 'far fa-fw fa fa-syringe',
                         'label'       => 12,
                         'label_color' => 'success',
                     ],
+                                      
                    /*  [
                         'text' => 'Facturacion',
                         'url'  => '#',
@@ -435,6 +437,15 @@ return [
                 'label'       => 'PEDRIATRIA',
                 'label_color' => 'primary',
             ], */
+            ['header' => 'APARTADO ESPECIAL'],
+            [
+                'text' => 'Fallecidos',
+                'url'  => '#',
+                'icon'        => 'far fa-fw fa fa-book-dead',
+                'label'       => 'New',
+                'label_color' => 'success',
+            ],
+
             ['header' => 'Configuracion de Usuario'],
             [
                 'text' => 'Perfil de Usuario',
@@ -442,7 +453,13 @@ return [
                 'icon' => 'fas fa-fw fa-user-circle
                 ',
             ],
-            
+            [
+                'text' => 'Registro de Usuario',
+                'url'  => 'register',
+                'icon' => 'fas fa-fw fa-user',
+                'label'       => 'New',
+                'label_color' => 'success',
+            ],
             //EJEMPLO DE APARTADO DEL MODULO CON SUB MENUS 
             /* [
                 'text'    => 'multilevel',
