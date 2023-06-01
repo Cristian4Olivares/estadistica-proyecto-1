@@ -11,21 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('endoscopias', function (Blueprint $table) {
-            $table->id();
+        //
+
+        Schema::create('consultaExterna', function (Blueprint $table) {
+            $table->id('idConsultaExt');
             $table->date('fechaRegistro');
             $table->bigInteger('facturaNumero');
             $table->bigInteger('expediente');
             $table->string('nombre','50');
-            /* $table->string('char','1');
-            $table->string('categoria','50');
-            $table->datetime('FechaNacimiento');
-            $table->bigInteger('edad');
-            $table->string('grado','50');
-            $table->string('fuerza','50');
-            $table->string('estudio','50');
-            $table->string('area','50');
-            $table->string('medico','50');*/
+            $table->unsignedBigInteger('fuerza_id');
+            $table->foreign('fuerza_id')->references('id_fueza')->on('fuerza')->onDelete('cascade');
             $table->timestamps(); 
         });
     }
@@ -35,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('endoscopias');
+        //
     }
 };

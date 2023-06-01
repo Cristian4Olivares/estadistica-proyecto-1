@@ -1,17 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use PhpParser\Node\Stmt\Return_;
-
 use function GuzzleHttp\Promise\all;
-
-
 
 //MODELOS CREADOS 
 use App\Models\Endoscopia;
+use App\Models\Categoria;
+
 
 class EndoscopiaController extends Controller
 {
@@ -31,7 +29,15 @@ class EndoscopiaController extends Controller
     {
         
         $endoscopias=Endoscopia::all();
-        return view('dash/endoscopia.index')->with('endoscopias',$endoscopias);
+        //$categorias = Categoria::orderBy('id','nombre_categoria');
+        $categorias = Categoria::all();
+        //$categorias = Categoria::pluck('nombre_categoria');
+        
+        //return view('dash/endoscopia.index')->with('endoscopias',$endoscopias);
+        return view('dash/endoscopia.index', compact('endoscopias','categorias'));
+        //return view('dash/endoscopia.create', compact('categorias'));
+       
+
     }
 
     /**
@@ -39,7 +45,8 @@ class EndoscopiaController extends Controller
      */
     public function create()
     {
-        return view('dash/endoscopia.create');
+        //$categorias = Categoria::all();
+        return view('dash/endoscopia.create', compact('categorias'));
     }
 
     /**
@@ -48,15 +55,32 @@ class EndoscopiaController extends Controller
      */
      
     public function store(Request $request) // METODO PARA CREAR LA INFORMACION
-    {
+    {    $categorias= new Categoria ();/*
+        //TRAER DATOS DE LA TABLA CATEGORIA
+       // $categorias = Categoria::pluck('id','nombre_categoria');
+        
+        $categorias-> nombre_categoria = $request->get('input_categorias_id');
+        $categorias->save();
+        print_r($categorias); */
+        
+       // $categorias= ('1');
+
+        printf($categorias);
+        //TRAER DATOS DE LA TRABA ENDOSCOSPIA
         $endoscopias = new Endoscopia();
         $endoscopias-> id = $request->get('id');
         $endoscopias-> fechaRegistro = $request->get('fechaRegistro');
         $endoscopias-> facturaNumero = $request->get('facturaNumero');
         $endoscopias-> expediente = $request->get('expediente');
         $endoscopias-> nombre = $request->get('nombre');
+       // $endoscopias-> categoria_id=$categorias;
 
+        /* $endoscopias-> categoria = $request->get($categorias); */
+        //print_r($categorias);
+        
+        //GUARDADO DE DATOS DE LAS TABLAS ANTERIORES
         $endoscopias->save();
+       /*  $categorias->save(); */
         return redirect('/endoscopia');
 
     }
@@ -74,8 +98,11 @@ class EndoscopiaController extends Controller
      */
     public function edit(string $id)
     {
-        $endoscopia=Endoscopia::find($id);
-        return view('dash/endoscopia.edit')->with('endoscopias',$endoscopia);
+        $endoscopias=Endoscopia::find($id);
+        $categorias=Categoria::find($id);
+        return view('dash/endoscopia.index', compact('endoscopias'), compact('categorias'));
+        /* return view('dash/endoscopia.edit')->with('endoscopias',$endoscopias);
+        return view('dash/endoscopia.edit')->with('categorias',$categorias); */
     }
 
     /**

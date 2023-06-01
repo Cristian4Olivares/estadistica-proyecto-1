@@ -325,7 +325,7 @@ return [
                 'submenu' => [
                     [
                         'text' => 'Consulta Externa (C.E)',
-                        'url'  => '#',
+                        'url'  => 'consultaexternas',
                         //'icon_color' => 'danger',
                         'icon'        => 'far fa-fw fa-hospital',
                         'label'       => 1,
@@ -441,6 +441,13 @@ return [
             [
                 'text' => 'Fallecidos',
                 'url'  => '#',
+                'icon'        => 'far fa-fw fa fa-book-dead',
+                'label'       => 'New',
+                'label_color' => 'success',
+            ],
+            [
+                'text' => 'Fuerza',
+                'url'  => '/fuerzas',
                 'icon'        => 'far fa-fw fa fa-book-dead',
                 'label'       => 'New',
                 'label_color' => 'success',

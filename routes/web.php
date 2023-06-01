@@ -22,6 +22,12 @@ Route::get('/', function () {
 
 Route::resource('endoscopia','App\Http\Controllers\EndoscopiaController');
 
+Route::resource('categorias','App\Http\Controllers\categoriaController');
+Route::resource('controlUniversal','App\Http\Controllers\UniversalControllerController');
+Route::resource('consultaexternas','App\Http\Controllers\ConsultaexternaController');
+Route::resource('fuerzas','App\Http\Controllers\FuerzaController');
+
+
 
 Route::middleware([
     'auth:sanctum',

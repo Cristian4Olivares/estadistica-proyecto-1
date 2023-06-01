@@ -27,7 +27,13 @@
             <p> </p>
             <input id="expediente" name="expediente" type="text" placeholder="expediente"  tabindex="4">
             <p> </p>
-            <input id="nombre" name="nombre" type="text" placeholder="Nombre"  tabindex="5">
+            <input id="nombre" name="nombre" type="text" placeholder="Nombre"  tabindex="5" class="form-control">
+            <p> </p>
+            <select name="input_categorias_id" id="input_categorias" class="form-control"> 
+                @foreach ($categorias as $categoria)
+                <option value="{{$categoria->id}}">{{$categoria->nombre_categoria}}</option>
+                @endforeach
+            </select> 
             
             {{-- <input type="password" placeholder="Nombre">
             <p> </p>
@@ -37,7 +43,6 @@
             <p> </p>
             <input type="password" placeholder="fecha nacimiento">
             <input type="edad" placeholder="edad"> --}}
-            <p class="acuerdo">continuar con el formulario</p>
 
             <a href="/endoscopia" class="btn btn-secondary" tabindex="6">CANCELAR</a>
             <button type="submit" class="btn btn-primary" tabindex="7">Ingresar registro</button>

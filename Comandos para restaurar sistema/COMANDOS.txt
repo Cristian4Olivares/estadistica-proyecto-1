@@ -1,0 +1,4 @@
+
+php artisan make:migration create_categorias_table --create=categorias
+(create_categorias_table-> nombre que se guardara en condigo fuente de laravel
+--create=categorias nombre que se mirara en mysql)

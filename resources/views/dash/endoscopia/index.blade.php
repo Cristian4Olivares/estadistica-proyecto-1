@@ -3,7 +3,7 @@
 @section('title', 'FORMULARIO ENDOSCOPIA')
 
 @section('content_header')
-    <h1>Endoscopia</h1>
+
 @stop
 
 @section('content')
@@ -27,6 +27,16 @@
             <input id="expediente" name="expediente" type="text" placeholder="expediente"  tabindex="4" >
             <p> </p>
             <input id="nombre" name="nombre" type="text" placeholder="Nombre"  tabindex="5" >
+            <p> </p>
+            <div>
+                <select name="input_categorias_id" id="input_categorias" > 
+                    <option value="" selected disabled>---------- Selecciona una Categoria ----------</option>
+                    @foreach ($categorias as $categoria)
+                    <option value="{{$categoria->nombre_categoria}}">{{$categoria->nombre_categoria}}</option>
+                    @endforeach
+                </select>
+            </div> 
+            
         </div>
         {{-- <input type="password" placeholder="Nombre">
         <p> </p>
@@ -45,15 +55,17 @@
         <p></p>
 
     
-    <table id="endoscopiatbl" class="table table-striped" style="width:100%">
+    <table id="endoscopiatbl" class="table table-blue table-striped mt-4" >
         <thead class="bg-primary text-white">
-            <tr>
+            <tr >
                 <th scope ="col">N° Registro</th>
                 <th scope ="col">Fecha Registro</th>
                 <th scope ="col">N° Factura </th>
                 <th scope ="col">Expediente</th>
                 <th scope ="col">Nombre</th>
+                <th scope ="col">Categoria</th>
                 <th scope ="col">Acciones</th>
+                
                 {{-- <th scope ="col">Sexo</th>
                 <th scope ="col">Categoria</th>
                 <th scope ="col">Fecha Nacimiento</th>
@@ -69,34 +81,37 @@
         <tbody>
             
             @foreach ($endoscopias as $esdoscopia)
-                <tr>
-                    <td>{{$esdoscopia->id}}</td> 
-                    <td>{{$esdoscopia->fechaRegistro}}</td>
-                    <td>{{$esdoscopia->facturaNumero}}</td>
-                    <td>{{$esdoscopia->expediente}}</td>
-                    <td>{{$esdoscopia->nombre}}</td>
-                    {{-- <td>{{$esdoscopia->char}}</td>
-                    <td>{{$esdoscopia->categoria}}</td>
-                    <td>{{$esdoscopia->FechaNacimiento}}</td>
-                    <td>{{$esdoscopia->edad}}</td>
-                    <td>{{$esdoscopia->grado}}</td>
-                    <td>{{$esdoscopia->fuerza}}</td>
-                    <td>{{$esdoscopia->estudio}}</td>
-                    <td>{{$esdoscopia->area}}</td>
-                    <td>{{$esdoscopia->medico}}</td> --}}
-                    <td>
-                        {{-- Funcion para poder borrar y editar la informacion de las tablas --}}
-                        <form action="{{route('endoscopia.destroy',$esdoscopia->id)}}" method="POST">
+                    <tr>
+                        <td >{{$esdoscopia->id}}</td> 
+                        <td>{{$esdoscopia->fechaRegistro}}</td>
+                        <td>{{$esdoscopia->facturaNumero}}</td>
+                        <td>{{$esdoscopia->expediente}}</td>
+                        <td>{{$esdoscopia->nombre}}</td>
+                        <td>{{$esdoscopia->categoria_id}}</td>
+                        
+                        {{-- <td>{{$esdoscopia->char}}</td>
+                        <td>{{$esdoscopia->categoria}}</td>
+                        <td>{{$esdoscopia->FechaNacimiento}}</td>
+                        <td>{{$esdoscopia->edad}}</td>
+                        <td>{{$esdoscopia->grado}}</td>
+                        <td>{{$esdoscopia->fuerza}}</td>
+                        <td>{{$esdoscopia->estudio}}</td>
+                        <td>{{$esdoscopia->area}}</td>
+                        <td>{{$esdoscopia->medico}}</td>
+                        <td>{{$esdoscopia->acciones}}</td> --}}
+                        <td>
+                            {{-- Funcion para poder borrar y editar la informacion de las tablas --}}
+                            <form action="{{route('endoscopia.destroy',$esdoscopia->id)}}" method="POST">
 
-                            <a href="/endoscopia/{{$esdoscopia->id}}/edit" class="btn btn-info">EDITAR</a>
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">BORRAR</button>
-                            
-                        </form>
+                                <a href="/endoscopia/{{$esdoscopia->id}}/edit" class="btn btn-info">EDITAR</a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">BORRAR</button>
+                                
+                            </form>
 
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
             @endforeach
         </tbody>
     </table>

@@ -6,7 +6,7 @@
 <h1>prueba</h1>
 <div >
     <h1>Endoscopia</h1>
-    <form  action="/endoscopia/{{$endoscopias->id}}" method="POST">
+    <form  action="/endoscopia/{{$endoscopias->id}}" action="/endoscopia/{{$categorias->id}}" method="POST">
         @csrf
         @method('PUT')
         {{-- <div class="mb-3">
@@ -23,7 +23,14 @@
         <input id="expediente" name="expediente" type="text" placeholder="expediente"  tabindex="4" value="{{$endoscopias->expediente}}">
         <p> </p>
         <input id="nombre" name="nombre" type="text" placeholder="Nombre"  tabindex="5" value="{{$endoscopias->nombre}}">
-        
+        <div>
+            <select name="input_categorias_id" id="input_categorias" > 
+                <option value="" selected disabled>---------- Selecciona una Categoria ----------</option>
+                @foreach ($categorias as $categoria)
+                <option value="{{$categoria->id}}">{{$categoria->nombre_categoria}}</option>
+                @endforeach
+            </select>
+        </div>
         {{-- <input type="password" placeholder="Nombre">
         <p> </p>
         <input type="password" placeholder="Genero">
