@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Fuerza
  *
- * @property $idFuerza
+ * @property $id
  * @property $tipo_fuerza
  * @property $created_at
  * @property $updated_at
@@ -18,9 +18,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Fuerza extends Model
 {
-    
+  protected $primaryKey = 'id'; 
     static $rules = [
-		'idFuerza' => '',
+		'id' => '',
 		'tipo_fuerza' => 'required',
     ];
 
@@ -31,7 +31,7 @@ class Fuerza extends Model
      *
      * @var array
      */
-    protected $fillable = ['tipo_fuerza','idFuerza'];
+    protected $fillable = ['id','tipo_fuerza'];
 
 
     /**
@@ -39,7 +39,7 @@ class Fuerza extends Model
      */
     public function consultaexternas()
     {
-        return $this->hasMany('App\Models\Consultaexterna', 'fuerza_id','idFuerza');
+        return $this->hasMany('App\Models\Consultaexterna', 'fuerza_id','id');
     }
     
 

@@ -8,7 +8,7 @@
         </div> --}}
         <div class="form-group">
             {{ Form::label('fechaRegistro') }}
-            {{ Form::date('fechaRegistro', $consultaexterna->fechaRegistro, ['class' => 'form-control' . ($errors->has('fechaRegistro') ? ' is-invalid' : ''), 'placeholder' => 'Fecharegistro']) }}
+            {{ Form::date('fechaRegistro', $consultaexterna->fechaRegistro, ['class' => '' . ($errors->has('fechaRegistro') ? ' is-invalid' : ''),'required value'=>$now->format('Y-m-d') , 'placeholder' => 'Fecharegistro']) }}
             {!! $errors->first('fechaRegistro', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

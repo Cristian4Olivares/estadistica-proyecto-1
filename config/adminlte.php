@@ -445,13 +445,7 @@ return [
                 'label'       => 'New',
                 'label_color' => 'success',
             ],
-            [
-                'text' => 'Fuerza',
-                'url'  => '/fuerzas',
-                'icon'        => 'far fa-fw fa fa-book-dead',
-                'label'       => 'New',
-                'label_color' => 'success',
-            ],
+            
 
             ['header' => 'Configuracion de Usuario'],
             [
@@ -467,6 +461,7 @@ return [
                 'label'       => 'New',
                 'label_color' => 'success',
             ],
+            
             //EJEMPLO DE APARTADO DEL MODULO CON SUB MENUS 
             /* [
                 'text'    => 'multilevel',
@@ -509,7 +504,7 @@ return [
                 ],
             ], */
             ['header' => 'REGISTRO INTERNO',
-                'header_color' => 'purple',
+                
             ],
             [
                 'text'    => 'REGISTRO MEDICO',
@@ -532,6 +527,33 @@ return [
                     ],
                 ],
             ],
+            [
+                'text'    => 'REGISTROS AREAS',
+                'icon'    => 'fas fa-fw fa fa-users',
+                'submenu' => [
+                    [
+                        'text' => 'Fuerza',
+                        'url'  => '/fuerzas',
+                        'icon'        => 'far fa-fw fa fa-book-dead',
+                        'label'       => 'New',
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Caracteristicas',
+                        'url'  => '/',
+                        'icon'        => 'far fa-fw fa fa-book-dead',
+                        'label'       => 'New',
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Area',
+                        'url'  => '/',
+                        'icon'        => 'far fa-fw fa fa-book-dead',
+                        'label'       => 'New',
+                        'label_color' => 'success',
+                    ],
+                    
+                ]],
 
             //EJEMPLO DE APARTADO DE MENU PARA REFERENCIDO A CADA MODULO
             /* [

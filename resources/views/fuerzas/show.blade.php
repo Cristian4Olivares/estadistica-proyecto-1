@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('template_title')
     {{ $fuerza->name ?? "{{ __('Show') Fuerza" }}
@@ -22,7 +22,7 @@
                         
                         <div class="form-group">
                             <strong>Idfuerza:</strong>
-                            {{ $fuerza->idFuerza }}
+                            {{ $fuerza->id }}
                         </div>
                         <div class="form-group">
                             <strong>tipo_fuerza:</strong>

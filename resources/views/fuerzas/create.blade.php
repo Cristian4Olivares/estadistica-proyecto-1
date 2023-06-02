@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+{{-- @extends('adminlte::page')
 
 @section('template_title')
     {{ __('Create') }} Fuerza
@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Fuerza</span>
+                        <span class="card-title">{{ __('Create') }} Fuerza2</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('fuerzas.store') }}"  role="form" enctype="multipart/form-data">
@@ -28,3 +28,4 @@
         </div>
     </section>
 @endsection
+ --}}

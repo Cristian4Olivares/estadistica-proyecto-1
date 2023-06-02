@@ -19,8 +19,9 @@ class FuerzaController extends Controller
     public function index()
     {
         $fuerzas = Fuerza::paginate();
+        $fuerza = new Fuerza();
 
-        return view('fuerzas.index', compact('fuerzas'))
+        return view('fuerzas.index', compact('fuerzas','fuerza'))
             ->with('i', (request()->input('page', 1) - 1) * $fuerzas->perPage());
     }
 
@@ -60,8 +61,9 @@ class FuerzaController extends Controller
     public function show($id)
     {
         $fuerza = Fuerza::find($id);
-
-        return view('fuerza.show', compact('fuerza'));
+       // Fuerza::where('id', $id)->update($fuerza);
+        
+        return view('fuerzas.show', compact('fuerza'));
     }
 
     /**
@@ -74,7 +76,7 @@ class FuerzaController extends Controller
     {
         $fuerza = Fuerza::find($id);
 
-        return view('fuerza.edit', compact('fuerza'));
+        return view('fuerzas.edit', compact('fuerza'));
     }
 
     /**

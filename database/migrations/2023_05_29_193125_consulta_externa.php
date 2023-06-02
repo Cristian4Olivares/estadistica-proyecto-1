@@ -13,7 +13,7 @@ return new class extends Migration
     {
         //
 
-        Schema::create('consultaExterna', function (Blueprint $table) {
+        Schema::create('consultaExternas', function (Blueprint $table) {
             $table->id('idConsultaExt');
             $table->date('fechaRegistro');
             $table->bigInteger('facturaNumero');

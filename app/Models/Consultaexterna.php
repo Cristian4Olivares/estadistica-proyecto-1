@@ -22,9 +22,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Consultaexterna extends Model
 {
+  protected $primaryKey = 'idConsultaExt'; 
     
     static $rules = [
-		'idConsultaExt' => 'required',
+		'idConsultaExt' => '',
 		'fechaRegistro' => 'required',
 		'facturaNumero' => 'required',
 		'expediente' => 'required',
@@ -47,7 +48,7 @@ class Consultaexterna extends Model
      */
     public function fuerza()
     {
-        return $this->hasOne('App\Models\Fuerza', 'idFuerza', 'fuerza_id');
+        return $this->hasOne('App\Models\Fuerza', 'id', 'fuerza_id');
     }
     
 

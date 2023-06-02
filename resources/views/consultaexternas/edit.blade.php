@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('template_title')
     {{ __('Update') }} Consultaexterna
@@ -16,11 +16,11 @@
                         <span class="card-title">{{ __('Update') }} Consultaexterna</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('consultaexternas.update', $consultaexterna->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('consultaexternas.update', $consultaexterna->idConsultaExt) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('consultaexterna.form')
+                            @include('consultaexternas.form')
 
                         </form>
                     </div>

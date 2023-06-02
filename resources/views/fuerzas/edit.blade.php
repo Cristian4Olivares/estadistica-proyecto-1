@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('template_title')
     {{ __('Update') }} Fuerza
@@ -20,7 +20,7 @@
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('fuerza.form')
+                            @include('fuerzas.form')
 
                         </form>
                     </div>

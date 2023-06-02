@@ -19,7 +19,7 @@
         <div >
             <div >
             <label for="" class="form-label"># Fecha de Registro</label>
-            <input id="fechaRegistro" name="fechaRegistro" type="date" placeholder="Fecha Registro"  tabindex="2" >
+            <input id="fechaRegistro" name="fechaRegistro" required value="{{$now->format('Y-m-d')}}" type="date" placeholder="Fecha Registro"  tabindex="2" >
             </div>
             <p> </p>
             <input id="facturaNumero" name="facturaNumero" type="text" placeholder="# Factura"  tabindex="3" >

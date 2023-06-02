@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('template_title')
-    {{ $consultaexterna->name ?? "{{ __('Show') Consultaexterna" }}
+    {{ $consultaexterna->name ?? " __('Show') Consultaexterna" }}
 @endsection
 
 @section('content')

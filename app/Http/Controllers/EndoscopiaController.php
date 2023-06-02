@@ -9,7 +9,7 @@ use function GuzzleHttp\Promise\all;
 //MODELOS CREADOS 
 use App\Models\Endoscopia;
 use App\Models\Categoria;
-
+use Carbon\Carbon;
 
 class EndoscopiaController extends Controller
 {
@@ -32,9 +32,10 @@ class EndoscopiaController extends Controller
         //$categorias = Categoria::orderBy('id','nombre_categoria');
         $categorias = Categoria::all();
         //$categorias = Categoria::pluck('nombre_categoria');
-        
+        //Funcion para obtener la fecha actual
+        $now=Carbon::now();
         //return view('dash/endoscopia.index')->with('endoscopias',$endoscopias);
-        return view('dash/endoscopia.index', compact('endoscopias','categorias'));
+        return view('dash/endoscopia.index', compact('endoscopias','categorias','now'));
         //return view('dash/endoscopia.create', compact('categorias'));
        
 
@@ -111,6 +112,7 @@ class EndoscopiaController extends Controller
     public function update(Request $request, string $id)
     {
         $endoscopia = Endoscopia::find($id);
+        
         //$endoscopia-> id = $request->get('id');
         $endoscopia-> fechaRegistro = $request->get('fechaRegistro');
         $endoscopia-> facturaNumero = $request->get('facturaNumero');
