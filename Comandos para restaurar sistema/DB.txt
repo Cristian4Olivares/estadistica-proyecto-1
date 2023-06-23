@@ -1,0 +1,20 @@
+COMANDO PARA SUBIR BASE DE DATOS DE GRANDES
+Para mi yo del futuro, en Windows: Crear primero la base de datos en phpmyadmin, abrir "shell" deade el panel de xampp, ejecutar: mysql -u root -p name_db, luego, ejecutar: source ruta_db/name_db
+
+ Schema::create('especialidadMedicos', function (Blueprint $table) {
+            $table->engine="InnoDB";        
+            $table->id('idEspecialidadMed');
+            $table->string('tipo_especialidad','50');
+            $table->timestamps();
+        });
+
+Schema::create('medicos', function (Blueprint $table) {
+            $table->engine="InnoDB";        
+            $table->id('idDoctores');
+            $table->bigInteger('identidad_medico');
+            $table->string('nombre_medico','50');
+            $table->string('celular_medico','50');
+            $table->string('estado_medico','50');
+            $table->foreignId('especialidad_id')->references('idEspecialidadMed')->on('especialidad_medicos');
+            $table->timestamps();
+        });

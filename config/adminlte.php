@@ -254,7 +254,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'dash',
+    'dashboard_url' => 'dash',//Ruta para la vista principal 
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -333,21 +333,21 @@ return [
                     ],
                     [
                         'text' => 'COVID',
-                        'url'  => '#',
+                        'url'  => 'dash',
                         'icon'        => 'far fa-fw fa fa-virus',
                         'label'       => 2,
                         'label_color' => 'success',
                     ],
                     [
                         'text' => 'Ecocardio',
-                        'url'  => '#',
+                        'url'  => 'dash',
                         'icon'        => 'far fa-fw fa fa-heartbeat',
                         'label'       => 3,
                         'label_color' => 'success',
                     ],
                     [
                         'text' => 'Emergencia General',
-                        'url'  => '#',
+                        'url'  => 'dash',
                         'icon'        => 'far fa-fw fa fa-medkit',
                         'label'       => 4,
                         'label_color' => 'success',
@@ -361,42 +361,42 @@ return [
                     ],
                     [
                         'text' => 'Facturación',
-                        'url'  => '#',
+                        'url'  => 'dash',
                         'icon'        => 'far fa-fw fa fa-credit-card',
                         'label'       => 6,
                         'label_color' => 'success',
                     ],
                     [
                         'text' => 'Farmacia C.E.',
-                        'url'  => '#',
+                        'url'  => 'dash',
                         'icon'        => 'far fa-fw fa-file',
                         'label'       => 7,
                         'label_color' => 'success',
                     ],
                     [
                         'text' => 'Laboratorio',
-                        'url'  => '#',
+                        'url'  => 'dash',
                         'icon'        => 'far fa-fw fa fa-flask',
                         'label'       => 8,
                         'label_color' => 'success',
                     ],
                     [
                         'text' => 'Odontología ',
-                        'url'  => '#',
+                        'url'  => 'dash',
                         'icon'        => 'far fa-fw fa fa-tooth',
                         'label'       => 9,
                         'label_color' => 'success',
                     ],
                     [
                         'text' => 'Radiología ',
-                        'url'  => '#',
+                        'url'  => 'dash',
                         'icon'        => 'far fa-fw fa fa-x-ray',
                         'label'       => 10,
                         'label_color' => 'success',
                     ],
                     [
                         'text' => 'Rehabilitación ',
-                        'url'  => '#',
+                        'url'  => 'dash',
                         'icon'        => 'far fa-fw fa fa-wheelchair',
                         'label'       => 11,
                         'label_color' => 'success',
@@ -411,7 +411,7 @@ return [
                                       
                    /*  [
                         'text' => 'Facturacion',
-                        'url'  => '#',
+                        'url'  => 'dash',
                         'icon'        => 'far fa-fw fa-file',
                         'label'       => 4,
                         'label_color' => 'success',
@@ -440,7 +440,7 @@ return [
             ['header' => 'APARTADO ESPECIAL'],
             [
                 'text' => 'Fallecidos',
-                'url'  => '#',
+                'url'  => 'dash',
                 'icon'        => 'far fa-fw fa fa-book-dead',
                 'label'       => 'New',
                 'label_color' => 'success',
@@ -469,7 +469,7 @@ return [
                 'submenu' => [
                     [
                         'text' => 'level_one',
-                        'url'  => '#',
+                        'url'  => 'dash',
                         'label'       => 4,
                         'label_color' => 'success',
                     ],
@@ -514,7 +514,7 @@ return [
                         'text' => 'Registrar Doctor',
                         //'icon_color' => 'purple',
                         'icon'    => 'fas fa-fw fa fa-user-md',
-                        'url'  => '#dash',
+                        'url'  => '/medicos',
                         //'label'       => 4,
                         //'label_color' => 'success',
                     ],
@@ -523,12 +523,20 @@ return [
                         'text' => 'Registrar Especialidad',
                         //'icon_color' => 'blue',
                         'icon'    => 'fas fa-fw fa fa-clipboard',
-                        'url'  => '#',
+                        'url'  => '/especialidad-medicos',
+                    ],
+                    [
+                        'text' => 'Registrar Paciente',
+                        //'icon_color' => 'blue',
+                        'icon'    => 'fas fa-fw fa fa-clipboard',
+                        'url'  => '/pacientes',
+                        'label' => 'New',
+                        'label_color' => 'success',
                     ],
                 ],
             ],
             [
-                'text'    => 'REGISTROS AREAS',
+                'text'    => 'DATOS DE EJERCITO',
                 'icon'    => 'fas fa-fw fa fa-users',
                 'submenu' => [
                     [
@@ -539,15 +547,15 @@ return [
                         'label_color' => 'success',
                     ],
                     [
-                        'text' => 'Caracteristicas',
-                        'url'  => '/',
+                        'text' => 'Categoria',
+                        'url'  => 'categorias',
                         'icon'        => 'far fa-fw fa fa-book-dead',
                         'label'       => 'New',
                         'label_color' => 'success',
                     ],
                     [
                         'text' => 'Area',
-                        'url'  => '/',
+                        'url'  => 'dash',
                         'icon'        => 'far fa-fw fa fa-book-dead',
                         'label'       => 'New',
                         'label_color' => 'success',

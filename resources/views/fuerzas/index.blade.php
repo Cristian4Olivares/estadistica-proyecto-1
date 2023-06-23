@@ -57,7 +57,7 @@
                     
                     <div class="">
                         <div class="table-responsive">
-                            <table id="endoscopiatbl" class="table table-grey table-striped mt-4">
+                            <table id="tblfuerza" class="table table-grey table-striped mt-4">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
@@ -112,11 +112,10 @@
 <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
 <script>
-    $(document).ready(function () {
-    $('#endoscopiatbl').DataTable({
-        "LengthMenu": [[5,10, 50,-1], [5,10,50,"All"]]
+    $(document).ready(function() {
+ var table = $('#tblfuerza').DataTable( {
+     lengthMenu: [[5, 10, 50, -1], [5, 10, 50, "All"]]
     });
-});
-
-</script>
+ });
+ </script>
 @stop

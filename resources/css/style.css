@@ -12,6 +12,11 @@ body {
     background: linear-gradient(to right, #ec2F4B, #009FFF);
     font-family: 'Roboto', sans-serif;  
 }
+
+.td{
+    text-align: center;
+}
+
 form{
     position: absolute;
     min-width: 280px;

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\View;
 |
 */
 use App\Models\Endoscopia;
+use Illuminate\Routing\Route as RoutingRoute;
 
 //Vista principal
 Route::get('/', function () {
@@ -21,13 +22,15 @@ Route::get('/', function () {
 });
 
 Route::resource('endoscopia','App\Http\Controllers\EndoscopiaController');
-
 Route::resource('categorias','App\Http\Controllers\categoriaController');
 Route::resource('controlUniversal','App\Http\Controllers\UniversalControllerController');
 Route::resource('consultaexternas','App\Http\Controllers\ConsultaexternaController');
 Route::resource('fuerzas','App\Http\Controllers\FuerzaController');
+Route::resource('pacientes','App\Http\Controllers\PacienteController');
+Route::resource('medicos','App\Http\Controllers\MedicoController');
+Route::resource('especialidad-medicos','App\Http\Controllers\EspecialidadMedicoController');
 
-
+Route::post('/getDoctors/{id}', 'DoctorController@getDoctors')->name('getDoctors');
 
 Route::middleware([
     'auth:sanctum',
@@ -36,6 +39,11 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dash', function () {
         return view('dash.index');
+    
+    //AJAX
+    /* Route:: get('/especialidades/{EspecialidadMedico}/Especialidad','App\Http\Controllers\EspecialidadMedicoController','doctores');
+ */
+
     })->name('dash');
 });
 

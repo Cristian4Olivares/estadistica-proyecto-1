@@ -20,10 +20,10 @@
 
                     <div class="card-body">
                         
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <strong>Idconsultaext:</strong>
                             {{ $consultaexterna->idConsultaExt }}
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <strong>Fecharegistro:</strong>
                             {{ $consultaexterna->fechaRegistro }}
@@ -51,3 +51,11 @@
         </div>
     </section>
 @endsection
+@section('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="resources\css\style.css">
+    
+@stop
+

@@ -1,0 +1,7 @@
+instalar repositorio 
+composer require ibex/crud-generator --dev
+
+publicar comando
+php artisan vendor:publish --tag=crud
+
+php artisan make:crud "fuerza"-> nombre de la tabla de base de datos

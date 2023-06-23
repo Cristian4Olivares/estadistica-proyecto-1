@@ -13,10 +13,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property $expediente
  * @property $nombre
  * @property $fuerza_id
+ * @property $medico_id
  * @property $created_at
  * @property $updated_at
  *
  * @property Fuerza $fuerza
+ * @property medico $medico
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -31,6 +33,7 @@ class Consultaexterna extends Model
 		'expediente' => 'required',
 		'nombre' => 'required',
 		'fuerza_id' => 'required',
+    'medico_id' => '',
     ];
 
     protected $perPage = 20;
@@ -40,7 +43,7 @@ class Consultaexterna extends Model
      *
      * @var array
      */
-    protected $fillable = ['idConsultaExt','fechaRegistro','facturaNumero','expediente','nombre','fuerza_id'];
+    protected $fillable = ['idConsultaExt','fechaRegistro','facturaNumero','expediente','nombre','fuerza_id','medico_id'];
 
 
     /**
@@ -51,5 +54,8 @@ class Consultaexterna extends Model
         return $this->hasOne('App\Models\Fuerza', 'id', 'fuerza_id');
     }
     
-
+    public function medico()
+    {
+        return $this->hasOne('App\Models\Medico', 'idMedicos', 'medicos_id');
+    }
 }

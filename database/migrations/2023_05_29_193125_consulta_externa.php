@@ -14,15 +14,19 @@ return new class extends Migration
         //
 
         Schema::create('consultaExternas', function (Blueprint $table) {
-            $table->id('idConsultaExt');
+            $table->engine = 'InnoDB';
+            $table->id('idConsultaExt')->unsigned;
             $table->date('fechaRegistro');
             $table->bigInteger('facturaNumero');
             $table->bigInteger('expediente');
             $table->string('nombre','50');
-            $table->unsignedBigInteger('fuerza_id');
-            $table->foreign('fuerza_id')->references('id_fueza')->on('fuerza')->onDelete('cascade');
+            $table->foreignId('fuerza_id')->references('id')->on('fuerzas');
+           // $table->foreignId('fuerza_id')->references('id')->on('fuerzas');
             $table->timestamps(); 
         });
+        /* Schema::table('consultaExternas', function (Blueprint $table) {
+            $table->foreignId('fuerza_id')->references('idFuerza')->on('fuerzas'); 
+        }); */
     }
 
     /**
@@ -31,5 +35,8 @@ return new class extends Migration
     public function down(): void
     {
         //
+        /* Schema::table('consultaExternas', function (Blueprint $table) {
+            $table->dropForeign('consultaExternas_fuerza_id_foreign');
+        }); */
     }
 };

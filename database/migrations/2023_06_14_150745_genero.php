@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::create('fuerzas', function (Blueprint $table) {
+        Schema::create('generos', function (Blueprint $table) {
             $table->engine="InnoDB";        
-            $table->id('id');
-            $table->string('tipo_fuerza','50');
+            $table->id('idGenero');
+            $table->string('tipo_genero','50');
             $table->timestamps();
         });
     }

@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::create('fuerzas', function (Blueprint $table) {
+        Schema::create('medicos', function (Blueprint $table) {
             $table->engine="InnoDB";        
-            $table->id('id');
-            $table->string('tipo_fuerza','50');
+            $table->id('idDoctores');
+            $table->bigInteger('identidad_medico');
+            $table->string('nombre_medico','50');
+            $table->string('celular_medico','50');
+            $table->string('estado_medico','50');
+            $table->foreignId('especialidad_id')->references('idEspecialidadMed')->on('especialidad_medicos');
             $table->timestamps();
         });
     }

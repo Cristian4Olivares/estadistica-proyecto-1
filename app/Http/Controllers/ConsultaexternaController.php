@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Fuerza;
 use App\Models\Consultaexterna;
+use App\Models\EspecialidadMedico;
+use App\Models\Medico;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -13,7 +15,10 @@ use Carbon\Carbon;
 class ConsultaexternaController extends Controller
 
 {
-    
+    //PROPIEDADES NECESARIAS 
+    public $selecMedico = null, $selectEspecialidad = null;
+    public $Medico = null, $specialidadMedico = null;
+
     /**
      * 
      * Display a listing of the resource.
@@ -26,7 +31,9 @@ class ConsultaexternaController extends Controller
         $consultaexternas = consultaexterna::paginate();
         $fuerzas = fuerza::pluck('tipo_fuerza','id');
         $now=Carbon::now();
-        return view('consultaexternas.index', compact('consultaexternas','consultaexterna','now','fuerzas'))
+        $especialidad = new EspecialidadMedico();
+        $medicos = Medico ::pluck('nombre_medico','idMedicos' );
+        return view('consultaexternas.index', compact('consultaexternas','consultaexterna','now','fuerzas','medicos'))
             ->with('i', (request()->input('page', 1) - 1) * $consultaexternas->perPage());
     }
 
@@ -38,7 +45,7 @@ class ConsultaexternaController extends Controller
     public function create()
     {
         $consultaexterna = new Consultaexterna();
-        $fuerzas = fuerza::pluck('tipo_fuerza','id');
+        $fuerzas = fuerza::pluck('tipo_fuerza');
         $now=Carbon::now();
         return view('consultaexternas.create', compact('consultaexterna','fuerzas','now'));
     }
@@ -81,8 +88,9 @@ class ConsultaexternaController extends Controller
     {
         $consultaexterna = Consultaexterna::find($id);
         $fuerzas = fuerza::pluck('tipo_fuerza','id');
+        $now=Carbon::now();
 
-        return view('consultaexternas.edit', compact('consultaexterna','fuerzas'));
+        return view('consultaexternas.edit', compact('consultaexterna','fuerzas','now'));
     }
 
     /**
