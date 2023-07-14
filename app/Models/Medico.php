@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Medico
  *
- * @property $idDoctores
+ * @property $idMedicos
  * @property $identidad_medico
  * @property $nombre_medico
  * @property $celular_medico
@@ -39,7 +39,7 @@ class Medico extends Model
      *
      * @var array
      */
-    protected $fillable = ['idDoctores','identidad_medico','nombre_medico','celular_medico','estado_medico','especialidad_id'];
+    protected $fillable = ['idMedicos','identidad_medico','nombre_medico','celular_medico','estado_medico','especialidad_id'];
 
 
     /**
@@ -48,6 +48,7 @@ class Medico extends Model
     public function especialidadMedico()
     {
         return $this->hasOne('App\Models\EspecialidadMedico', 'idEspecialidadMed', 'especialidad_id');
+        return $this->belongsTo(EspecialidadMedico::class);
     }
     
 

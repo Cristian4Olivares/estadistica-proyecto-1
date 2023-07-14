@@ -32,7 +32,7 @@
                 <select name="input_categorias_id" id="input_categorias" > 
                     <option value="" selected disabled>---------- Selecciona una Categoria ----------</option>
                     @foreach ($categorias as $categoria)
-                    <option value="{{$categoria->nombre_categoria}}">{{$categoria->nombre_categoria}}</option>
+                    <option value="{{$categoria->idEspecialidadMed}}">{{$categoria->nombre_categoria}}</option>
                     @endforeach
                 </select>
             </div> 
@@ -87,7 +87,7 @@
                         <td>{{$esdoscopia->facturaNumero}}</td>
                         <td>{{$esdoscopia->expediente}}</td>
                         <td>{{$esdoscopia->nombre}}</td>
-                        <td>{{$esdoscopia->categoria_id}}</td>
+                        <td>---</td>
                         
                         {{-- <td>{{$esdoscopia->char}}</td>
                         <td>{{$esdoscopia->categoria}}</td>

@@ -15,22 +15,35 @@ use Illuminate\Support\Facades\View;
 */
 use App\Models\Endoscopia;
 use Illuminate\Routing\Route as RoutingRoute;
+use Symfony\Component\Routing\Route as ComponentRoutingRoute;
 
 //Vista principal
 Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::resource('consultaexternas','App\Http\Controllers\ConsultaexternaController');
+Route::resource('emergenciagnr','App\Http\Controllers\EmergenciaGeneralController');
+
 Route::resource('endoscopia','App\Http\Controllers\EndoscopiaController');
 Route::resource('categorias','App\Http\Controllers\categoriaController');
 Route::resource('controlUniversal','App\Http\Controllers\UniversalControllerController');
-Route::resource('consultaexternas','App\Http\Controllers\ConsultaexternaController');
 Route::resource('fuerzas','App\Http\Controllers\FuerzaController');
 Route::resource('pacientes','App\Http\Controllers\PacienteController');
 Route::resource('medicos','App\Http\Controllers\MedicoController');
 Route::resource('especialidad-medicos','App\Http\Controllers\EspecialidadMedicoController');
+Route::resource('DepartamentosHn','App\Http\Controllers\DepartamentosHnController');
+Route::resource('Municipios','App\Http\Controllers\MunicipiosHnController');
 
-Route::post('/getDoctors/{id}', 'DoctorController@getDoctors')->name('getDoctors');
+//RUTAS GET
+Route::get('doctorCE/especialidadCE/{especialidad_id}', [App\Http\Controllers\ConsultaexternaController::class, 'getMedicosPorEspecialidad']);
+Route::get('/medicoEG/especialidadEG/{especialidad_id_emergencia}', [App\Http\Controllers\EmergenciaGeneralController::class, 'getMedicosPorEspecialidad']);
+
+Route::get('/departamento/{muni}', [App\Http\Controllers\EmergenciaGeneralController::class, 'getMunicipios']);
+
+
+//METODOS POST 
+Route::post('medico', [App\Http\Controllers\ConsultaexternaController::class, 'guardarSeleccionMedico']);
 
 Route::middleware([
     'auth:sanctum',
@@ -38,13 +51,9 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dash', function () {
-        return view('dash.index');
+        return view('dash.index'); })->name('dash');
     
-    //AJAX
-    /* Route:: get('/especialidades/{EspecialidadMedico}/Especialidad','App\Http\Controllers\EspecialidadMedicoController','doctores');
- */
-
-    })->name('dash');
+    
 });
 
 /* Route::get('/', function () {

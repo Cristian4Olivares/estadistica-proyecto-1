@@ -17,6 +17,13 @@ class MedicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getMedicosPorEspecialidad(Request $request)
+    {
+        $especialidadId = $request->input('idEspecialidadMed');
+        $medicos = Medico::where('especialidad_id', $especialidadId)->get();
+        return response()->json($medicos);
+    }
+    
     public function index()
     {
         $medicos = Medico::paginate();

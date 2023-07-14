@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('medicos', function (Blueprint $table) {
+        Schema::create('departamentos_hns', function (Blueprint $table) {
             $table->engine="InnoDB";        
-            $table->id('idMedicos');
-            $table->bigInteger('identidad_medico');
-            $table->string('nombre_medico','50');
-            $table->string('celular_medico','50');
-            $table->string('estado_medico','50');
-            $table->foreignId('especialidad_id')->references('idEspecialidadMed')->on('especialidad_medicos');
+            $table->id('idDeptoHN');
+            $table->string('nombre_depto','50');
             $table->timestamps();
         });
     }

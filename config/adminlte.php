@@ -325,7 +325,7 @@ return [
                 'submenu' => [
                     [
                         'text' => 'Consulta Externa (C.E)',
-                        'url'  => 'consultaexternas',
+                        'url'  => '/consultaexternas',
                         //'icon_color' => 'danger',
                         'icon'        => 'far fa-fw fa-hospital',
                         'label'       => 1,
@@ -333,7 +333,7 @@ return [
                     ],
                     [
                         'text' => 'COVID',
-                        'url'  => 'dash',
+                        'url'  => 'dashhh',
                         'icon'        => 'far fa-fw fa fa-virus',
                         'label'       => 2,
                         'label_color' => 'success',
@@ -347,7 +347,7 @@ return [
                     ],
                     [
                         'text' => 'Emergencia General',
-                        'url'  => 'dash',
+                        'url'  => '/emergenciagnr',
                         'icon'        => 'far fa-fw fa fa-medkit',
                         'label'       => 4,
                         'label_color' => 'success',
@@ -530,6 +530,22 @@ return [
                         //'icon_color' => 'blue',
                         'icon'    => 'fas fa-fw fa fa-clipboard',
                         'url'  => '/pacientes',
+                        'label' => 'New',
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Ingreso Departamento',
+                        //'icon_color' => 'blue',
+                        'icon'    => 'fas fa-fw fa fa-clipboard',
+                        'url'  => '/DepartamentosHn',
+                        'label' => 'New',
+                        'label_color' => 'success',
+                    ],
+                    [
+                        'text' => 'Ingreso Municipio',
+                        //'icon_color' => 'blue',
+                        'icon'    => 'fas fa-fw fa fa-clipboard',
+                        'url'  => '/Municipios',
                         'label' => 'New',
                         'label_color' => 'success',
                     ],
